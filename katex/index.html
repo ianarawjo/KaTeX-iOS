@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)http://khan.github.io/KaTeX/ -->
+<html class="wf-proximanova-i6-active wf-proximanova-n3-active wf-proximanova-n4-active wf-proximanova-n6-active wf-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<link rel="stylesheet" type="text/css" href="katex.min.css">
+<script src="katex.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+<div>$LATEX$</div>
+
+<script type="text/javascript">
+window.startup = function() {
+	function onload() {
+		var texes = document.getElementsByClassName('tex');
+        for(var i=0; i<texes.length; i++) {
+            katex.render(texes[i].innerHTML, texes[i]);
+        }
+	}
+
+	onload();
+}
+startup();
+</script>
+</body>
+</html>
