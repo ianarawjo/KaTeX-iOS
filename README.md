@@ -20,10 +20,10 @@ Initialize using [UIKatexView katexView:tex center:cgpoint]. TeX expressions can
 
 **Example text (NSStrings):**
 
-- I heard that $c = \\sqrt{a^2 - b^2}$ but I don't believe it.
-- What is $n$ if $n \\cdot 4$ gives $8$?
-- Remember that $\\displaystyle \\sum_{i=0}^n{i} = \\frac{(n)(n+1)}{2}$. Plugging in...
-- \\displaystyle f(x) = \\int_{-\\infty}^\\infty \\hat f(\\xi)\\,e^{2 \\pi i \\xi x} \\,d\\xi
+- I heard that $c = \\\\sqrt{a^2 - b^2}$ but I don't believe it.
+- What is $n$ if $n \\\\cdot 4$ gives $8$?
+- Remember that $\\\\displaystyle \\\\sum_{i=0}^n{i} = \\\\frac{(n)(n+1)}{2}$. Plugging in...
+- \\\\displaystyle f(x) = \\\\int_{-\\\\infty}^\\\\infty \\\\hat f(\\\\xi)\\\\,e^{2 \\\\pi i \\\\xi x} \\\\,d\\\\xi
 
 Remember that '\' character has to be escaped when used in an NSString.
 
