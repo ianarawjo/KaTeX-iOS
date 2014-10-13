@@ -15,7 +15,9 @@
 // * can set the frame at initialization. */
 +(instancetype)katexView:(NSString*)tex center:(CGPoint)center;
 
-/** Constructor for custom settings. Default delimiter = $. */
+/** Constructors for custom settings. Default delimiter = $, width = 200. */
 +(instancetype)katexView:(NSString*)tex center:(CGPoint)center delimiter:(NSString*)delim;
++(instancetype)katexView:(NSString*)tex center:(CGPoint)center delimiter:(NSString*)delim framewidth:(float)width;
++(instancetype)katexView:(NSString*)tex center:(CGPoint)center framewidth:(float)width;
 
 @end

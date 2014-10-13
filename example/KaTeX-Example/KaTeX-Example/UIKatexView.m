@@ -8,27 +8,39 @@
 
 #import "UIKatexView.h"
 #define DEFAULT_DELIMITER @"$"
+#define DEFAULT_FRAMEWIDTH 200
 
 @implementation UIKatexView {
     UIWebView * _katexWebView;
     CGPoint _storedCenter;
     
     NSString * _delimiter;
+    float _framewidth;
 }
 
 // * Use this instead of initWithFrame! *
 +(instancetype)katexView:(NSString*)tex center:(CGPoint)center {
-    return [self katexView:tex center:center delimiter:DEFAULT_DELIMITER];
+    return [self katexView:tex center:center delimiter:DEFAULT_DELIMITER framewidth:DEFAULT_FRAMEWIDTH];
 }
-+(instancetype)katexView:(NSString*)tex center:(CGPoint)center delimiter:(NSString*)delim {
++(instancetype)katexView:(NSString*)tex center:(CGPoint)center framewidth:(float)width {
+    return [self katexView:tex center:center delimiter:DEFAULT_DELIMITER framewidth:width];
+}
++(instancetype)katexView:(NSString*)tex center:(CGPoint)center delimiter:(NSString *)delim {
+    return [self katexView:tex center:center delimiter:delim framewidth:DEFAULT_FRAMEWIDTH];
+}
++(instancetype)katexView:(NSString*)tex center:(CGPoint)center delimiter:(NSString*)delim framewidth:(float)width {
     UIKatexView * k = [[UIKatexView alloc] initWithFrame:CGRectZero];
     [k setCenter:center];
     [k setDelimiter:delim];
+    [k setFrameWidth:width];
     [k loadKatex:tex];
     return k;
 }
 -(void)setDelimiter:(NSString*)delim {
     _delimiter = delim;
+}
+-(void)setFrameWidth:(float)w {
+    _framewidth = w;
 }
 -(void)setCenter:(CGPoint)center {
     [super setCenter:center];
@@ -43,7 +55,7 @@
         aWebView.scrollView.scrollEnabled = NO;    // Property available in iOS 5.0 and later
         CGRect frame = aWebView.frame;
         
-        frame.size.width = 200;       // Your desired width here.
+        frame.size.width = _framewidth;       // Your desired width here.
         frame.size.height = 1;        // Set the height to a small one.
         
         frame.origin.y = 0;
