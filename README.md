@@ -15,7 +15,7 @@ A UIView that renders TeX expressions with KaTeX.
 Initialize using [UIKatexView katexView:tex center:cgpoint]. TeX expressions can be either:
 - Pure expression (no $ signs!)
 - Mixture of expression and text (HTML). Wrap a math expression in $ signs.
-* You can also set a custom delimiter in place of the $ sign, using katexView:center:delimiter:.
+* You can also set a custom delimiter in place of the $ sign, using katexView:center:delimiter:. Check the other constructors in UIKatexView.h for more details.
 
 
 **Example text (NSStrings):**
